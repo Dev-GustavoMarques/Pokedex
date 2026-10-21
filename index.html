@@ -7,28 +7,43 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        
-        <main>
-            
-            <div id="titulo_div">
+
+        <header>
+            <section class= 'section' id="titulo_section">
                 <div id="titulo">
                     <h1 class='pokebola' id="p">P</h1>
                     <img id="pokebola" src="pngs/pokebola.png" alt="">
                     <h1 class='pokebola' id="kedex">KEDEX</h1>
                 </div>
-            </div>
+            </section>
+        </header>
+
+        <main>
+            <section class= 'section' id="conteudo_section">
+                <div class="redondo" id="conteudo">
 
 
-            <div id="conteudo_div">
-                <div id='conteudo'>
-                <label class='redondo 'for="input" style="margin-top: 40px;">Pokemon</label>
-                <input class='redondo' type="text" id="input">
-                <button class='redondo' id="botao" type="submit">Buscar</button>
+                    <img class= 'img' src="" alt="" id="img_pokemon">
+                    <img class= 'img' src="" alt="" id="img_pokemon_shiny">
+                    
                 </div>
-            </div>
 
+                <div id="container">
+                    <img src="pngs/fundo_pokebola.jpeg" alt="" id="retangulo" hidden>
+                    <ul id="infos" class="section"></ul>
+                </div>
 
+            </section>
         </main>
+
+        <footer>
+            <section class= 'section' id="pesquisa_section">
+                <div class= 'redondo' id='pesquisa'>
+                <input class='redondo' type="text" id="input" placeholder="Nome do pokemon">
+                <button class='redondo' id="botao" type="submit">Encontrar</button>
+                </div>
+            </section>
+        </footer>
 
         <script src="script.js"></script>
     </body>

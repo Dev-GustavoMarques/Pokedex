@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: rgb(22,25,37);
+    background-color: rgb(17,21,34);
     color: white;
 }
 
@@ -22,7 +22,7 @@ body {
     font-size: 6rem;
 }
 
-#titulo_div {
+.section{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,14 +33,11 @@ body {
     display: flex;
 }
 
-#conteudo_div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+#conteudo {
+    margin-top: 4rem;
 }
 
-#conteudo {
+#pesquisa {
     
     display: flex;
     flex-direction: column;
@@ -48,17 +45,47 @@ body {
 
     width: 16rem;
     height: 10rem;
-    margin-top: 9rem;
-    gap: 1rem;
+    margin-top: 4rem;
+    gap: 2rem;
     background-color: gray;
-    border-radius: 20px;
+    margin: 1rem;
 } 
 
 .redondo {
-    border-radius: 20px;
-    height: rem;
+    border-radius: 1rem;
 }
 
 #botao {
-    width: 75px;
+    width: 5.5rem;
+}
+
+#input {
+    height: 1.7rem;
+    width: 12rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.img {
+    height: 17rem;
+}
+
+#infos {
+    margin-top: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: left;
+}   
+
+#container {
+    position: relative;
+}
+
+#retangulo {
+    width: 30rem;
 }
