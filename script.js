@@ -1,11 +1,18 @@
-async function main(nome) {
+async function main(nomeDigitado) {
 
     infos.innerHTML = ''
     img_pokemon.setAttribute('src', ''); img_pokemon_shiny.setAttribute('src', '')
 
-    if (nome === '') {
+    if (nomeDigitado === '') {
         return null
     }
+
+    const nome = nomeDigitado
+        .trim()
+        .toLowerCase()  // remove acentos: "Pokémon" -> "pokemon"
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove pontos e apóstrofos: "Mr. Mime" -> "Mr Mime"
+        .replace(/[.']/g, '')                              // espaços viram hífen: "mr mime" -> "mr-mime"
+        .replace(/\s+/g, '-')
 
     try {
         
