@@ -20,14 +20,18 @@ async function main(nome) {
         if (!pokedex.ok) {
             
             if (pokedex.status === 404 || pokedex.status === 400) {
+                console.log(`HTTP ${pokedex.status}`)
                 input.value = '❌Pokemon não encontrado'
                 botao.removeAttribute('disabled', '')
-                botao.textContent = 'Encontrado'
+                botao.textContent = 'Encontrar'
             }
-            
+
+            else {
+            input.value = '❌Ocorreu um erro'
             botao.removeAttribute('disabled', '')
-            botao.textContent = 'Encontrado'
+            botao.textContent = 'Encontrar'
             throw new Error(`HTTP ${pokedex.status}`)
+            }
         }
         
         retangulo.removeAttribute('hidden', '')
@@ -57,6 +61,7 @@ async function main(nome) {
 
     catch (error) {
         console.log(error)
+        input.value = '❌Ocorreu um erro'
         botao.removeAttribute('disabled', '')
         botao.textContent = 'Encontrar'
     }
