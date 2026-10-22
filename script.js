@@ -1,5 +1,3 @@
-
-
 async function main(nome) {
 
     infos.innerHTML = ''
@@ -8,7 +6,6 @@ async function main(nome) {
     if (nome === '') {
         return null
     }
-
 
     try {
         
@@ -79,8 +76,4 @@ const img_pokemon = document.querySelector('#img_pokemon')
 const img_pokemon_shiny = document.querySelector('#img_pokemon_shiny')
 const retangulo = document.querySelector('#retangulo')
 
-botao.addEventListener('mouseover', () => botao.classList.add('mouseover'))
-botao.addEventListener('mouseout', () => botao.classList.remove('mouseover')) //RESOLVER DEPOIS ESTILIZAÇÂO
-
 botao.addEventListener('click', () => main(input.value))
-
