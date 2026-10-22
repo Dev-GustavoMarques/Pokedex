@@ -43,7 +43,7 @@ async function main(nome) {
         ]
 
         for (const texto of linhas) {
-            const elemento = document.createElement('il')
+            const elemento = document.createElement('li')
             elemento.textContent = texto
             infos.append(elemento)
         }
