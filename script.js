@@ -44,7 +44,7 @@ async function main(nome) {
         ]
 
         for (const texto of linhas) {
-            const elemento = document.createElement('li')
+            const elemento = document.createElement('ul')
             elemento.textContent = texto
             infos.append(elemento)
         }
