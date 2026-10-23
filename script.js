@@ -5,10 +5,10 @@ async function main(nomeDigitado) {
 
     const nome = nomeDigitado
         .trim()
-        .toLowerCase()  // remove acentos: "Pokémon" -> "pokemon"
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove pontos e apóstrofos: "Mr. Mime" -> "Mr Mime"
-        .replace(/[.']/g, '')                              // espaços viram hífen: "mr mime" -> "mr-mime"
-        .replace(/\s+/g, '-')
+        .toLowerCase()                                    
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos: "Pokémon" -> "pokemon"
+        .replace(/[.']/g, '')                              // remove pontos e apóstrofos: "Mr. Mime" -> "Mr Mime"
+        .replace(/\s+/g, '-')                              // espaços viram hífen: "mr mime" -> "mr-mime"
 
         if (nomeDigitado === '') {
         return null
