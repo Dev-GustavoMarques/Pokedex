@@ -1,7 +1,8 @@
 async function main(nomeDigitado) {
 
+    retangulo.setAttribute('hidden', '')
     infos.innerHTML = ''
-    img_pokemon.setAttribute('src', ''); img_pokemon_shiny.setAttribute('src', '')
+    img_pokemon.removeAttribute('src'); img_pokemon_shiny.removeAttribute('src')
 
     const nome = nomeDigitado
         .trim()
@@ -19,7 +20,7 @@ async function main(nomeDigitado) {
         botao.setAttribute('disabled', '')
         botao.textContent = 'Carregando'
 
-        const pokedex = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`) 
+        const pokedex = await fetch(`https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(nome)}`) 
         
         if (!pokedex.ok) {
             
@@ -74,7 +75,11 @@ async function main(nomeDigitado) {
 }
 
 function capitalize(str) {
-    if (!str) return '';
+    
+    if (!str) {
+        return '';
+    }
+    
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
