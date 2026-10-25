@@ -11,7 +11,7 @@ async function main(nomeDigitado) {
         .replace(/\s+/g, '-')                              // espaços viram hífen: "mr mime" -> "mr-mime"
 
         if (nome === '') {
-        return null
+            return null
         }
 
     try {
@@ -28,14 +28,15 @@ async function main(nomeDigitado) {
                 input.value = '❌Pokemon não encontrado'
                 botao.removeAttribute('disabled', '')
                 botao.textContent = 'Encontrar'
-                throw new Error(`HTTP ${pokedex.status}`)
+                return null
             }
-
+            
             else {
-            input.value = '❌Ocorreu um erro'
-            botao.removeAttribute('disabled', '')
-            botao.textContent = 'Encontrar'
-            throw new Error(`HTTP ${pokedex.status}`)
+                console.log(`HTTP ${pokedex.status}`)
+                input.value = '❌Ocorreu um erro'
+                botao.removeAttribute('disabled', '')
+                botao.textContent = 'Encontrar'
+                return null
             }
         }
         
