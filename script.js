@@ -10,9 +10,9 @@ async function main(nomeDigitado) {
         .replace(/[.']/g, '')                              // remove pontos e apóstrofos: "Mr. Mime" -> "Mr Mime"
         .replace(/\s+/g, '-')                              // espaços viram hífen: "mr mime" -> "mr-mime"
 
-        if (nomeDigitado === '') {
+        if (nome === '') {
         return null
-    }
+        }
 
     try {
         
@@ -28,6 +28,7 @@ async function main(nomeDigitado) {
                 input.value = '❌Pokemon não encontrado'
                 botao.removeAttribute('disabled', '')
                 botao.textContent = 'Encontrar'
+                throw new Error(`HTTP ${pokedex.status}`)
             }
 
             else {
@@ -51,7 +52,7 @@ async function main(nomeDigitado) {
         ]
 
         for (const texto of linhas) {
-            const elemento = document.createElement('ul')
+            const elemento = document.createElement('li')
             elemento.textContent = texto
             infos.append(elemento)
         }
